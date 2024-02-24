@@ -8,6 +8,7 @@ import UpdateContract from "./components/UpdateContract";
 import Transfers from "./components/Transfers";
 import { RouterProvider,createBrowserRouter} from "react-router-dom";
 import Wallet from "./pages/Wallet";
+import Home from "./pages/Home";
 
 enum BeaconConnection {
   NONE = "",
@@ -47,15 +48,21 @@ const App = () => {
 
 
 
-const router = createBrowserRouter([
-  {path: '/', element : <Wallet></Wallet>}
-])
-return(
-  <>
-  <RouterProvider router={router}/>
-  </>
-)
+  const router = userAddress ? 
+  createBrowserRouter([
+    { path: '/home', element: <Home></Home> },
+  ]) :
+  createBrowserRouter([
+    { path: '/', element: <Wallet></Wallet> },
+  ]);
 
+return (
+  <>
+    <div>
+      <RouterProvider router={router}/>
+    </div>
+  </>
+);
 
 
 
