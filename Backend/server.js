@@ -27,9 +27,8 @@ initializeContract().then((contract) => {
 const fetchNFTs = async (contract) => {
     try {
         const nftsBalance = await contract.methods.balance_of([
-            { owner: "tz1g1XsJRH8N5PXdvpCyQDFZhrTpBQAA3Z7o", token_id: 0 }
+            { owner: "tz1NGNCGDepnUzdGYttaFJjrmoAdp8bAM79z", token_id: 0 }
         ]);
-        const mint = await contract.methods.mint("tz1g1XsJRH8N5PXdvpCyQDFZhrTpBQAA3Z7o",['shreyas',])
         console.log('NFTs Balance:', nftsBalance);
     } catch (error) {
         console.error('Error fetching NFTs:', error);
