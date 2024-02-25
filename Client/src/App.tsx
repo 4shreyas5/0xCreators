@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Components
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
+import Members from "./components/Members";
 
 const App: React.FC = () => {
   const [isWalletConnected, setIsWalletConnected] = useState(false);
@@ -27,7 +28,7 @@ const App: React.FC = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* Routes accessible only when wallet is connected */}
+        <Route path="/members" element={<Members/>}/>
       </Routes>
     </Router>
   );
